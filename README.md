@@ -334,7 +334,7 @@ Tem uma skill que faria diferença para PMEs brasileiras? Contribuições são b
 
 <p>
   <strong>Mangaba AI</strong> — Inteligência Artificial para empresas brasileiras<br>
-  Acesse: <a href="https://www.mangaba.ia.br/">mangaba.ai</a>
+  Acesse: <a href="https://www.mangaba.ia.br/">mangaba.ia.br</a>
 </p>
 
 ---

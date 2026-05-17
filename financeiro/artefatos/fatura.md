@@ -60,7 +60,7 @@ Gere a fatura em formato profissional, com:
 EMITENTE
 Mangaba Serviços Ltda | CNPJ: 00.000.000/0001-00
 Rua das Flores, 100 — São Paulo/SP
-contato@mangaba.ai | (11) 99999-9999
+contato@mangaba.ia.br | (11) 99999-9999
 
 CLIENTE
 Maria Empreendimentos ME | CNPJ: 11.111.111/0001-11
@@ -78,7 +78,7 @@ PAGAMENTO
 Chave PIX: 00.000.000/0001-00
 Banco: Nubank Empresas | Ag: 0001 | CC: 123456-7
 
-Após o pagamento, enviar comprovante para contato@mangaba.ai
+Após o pagamento, enviar comprovante para contato@mangaba.ia.br
 
 Obrigado pela confiança! Em caso de dúvidas, estamos à disposição.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
