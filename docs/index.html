@@ -394,36 +394,87 @@
     footer .footer-logo { font-size: 1.5rem; margin-bottom: .5rem; }
 
     /* ── CLAUDE LOGO ── */
-    .claude-logo-wrap {
+    .claude-hero-logo {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
+      gap: 1.5rem;
+      margin-bottom: 2.75rem;
     }
-    .claude-logo-svg {
-      width: 96px;
-      height: 96px;
-      filter: drop-shadow(0 8px 24px rgba(217,119,87,.45));
-      animation: floatLogo 4s ease-in-out infinite;
-    }
-    @keyframes floatLogo {
-      0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(-6px); }
-    }
-    .claude-logo-label {
-      display: inline-flex;
+
+    .claude-glow-ring {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      display: flex;
       align-items: center;
-      gap: .45rem;
-      background: rgba(217,119,87,.15);
-      border: 1px solid rgba(217,119,87,.35);
-      border-radius: 999px;
-      padding: .3rem .9rem;
-      font-size: .78rem;
-      font-weight: 700;
-      color: #f5c6b0;
-      letter-spacing: .06em;
+      justify-content: center;
+    }
+    .claude-glow-ring::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(217,119,87,.28) 0%, rgba(217,119,87,.08) 55%, transparent 75%);
+      animation: pulsate 3s ease-in-out infinite;
+    }
+    .claude-glow-ring::after {
+      content: '';
+      position: absolute;
+      inset: 18px;
+      border-radius: 50%;
+      border: 1px solid rgba(217,119,87,.2);
+      animation: pulsate 3s ease-in-out infinite reverse;
+    }
+    @keyframes pulsate {
+      0%, 100% { transform: scale(1);   opacity: 1; }
+      50%       { transform: scale(1.07); opacity: .6; }
+    }
+
+    .claude-mark {
+      width: 120px;
+      height: 120px;
+      position: relative;
+      z-index: 1;
+      filter:
+        drop-shadow(0 0 14px rgba(217,119,87,.9))
+        drop-shadow(0 0 36px rgba(217,119,87,.5))
+        drop-shadow(0 0 70px rgba(217,119,87,.25));
+      animation: floatMark 5s ease-in-out infinite;
+    }
+    @keyframes floatMark {
+      0%, 100% { transform: translateY(0)    rotate(0deg); }
+      50%       { transform: translateY(-9px) rotate(6deg); }
+    }
+
+    .claude-wordmark {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+    }
+    .claude-wm-line {
+      height: 1px;
+      width: 52px;
+      background: linear-gradient(90deg, transparent 0%, rgba(217,119,87,.65) 100%);
+    }
+    .claude-wm-line.r {
+      background: linear-gradient(90deg, rgba(217,119,87,.65) 0%, transparent 100%);
+    }
+    .claude-wm-text {
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .32em;
       text-transform: uppercase;
+      color: rgba(255,255,255,.82);
+    }
+    .claude-wm-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #D97757;
+      margin: 0 .15rem;
+      display: inline-block;
+      vertical-align: middle;
     }
 
     /* ── POWERED BY STRIP ── */
@@ -479,19 +530,47 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <div class="claude-logo-wrap">
-      <!-- Claude logo mark — radial capsule design, brand orange #D97757 -->
-      <svg class="claude-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Claude by Anthropic">
-        <rect x="46" y="8"  width="8" height="30" rx="4" fill="#D97757" transform="rotate(0   50 50)"/>
-        <rect x="46" y="8"  width="8" height="30" rx="4" fill="#D97757" transform="rotate(45  50 50)" opacity=".85"/>
-        <rect x="46" y="8"  width="8" height="30" rx="4" fill="#D97757" transform="rotate(90  50 50)" opacity=".7"/>
-        <rect x="46" y="8"  width="8" height="30" rx="4" fill="#D97757" transform="rotate(135 50 50)" opacity=".55"/>
-        <rect x="46" y="8"  width="8" height="30" rx="4" fill="#D97757" transform="rotate(180 50 50)" opacity=".4"/>
-        <rect x="46" y="8"  width="8" height="30" rx="4" fill="#D97757" transform="rotate(225 50 50)" opacity=".55"/>
-        <rect x="46" y="8"  width="8" height="30" rx="4" fill="#D97757" transform="rotate(270 50 50)" opacity=".7"/>
-        <rect x="46" y="8"  width="8" height="30" rx="4" fill="#D97757" transform="rotate(315 50 50)" opacity=".85"/>
-      </svg>
-      <div class="claude-logo-label">✦ Claude · Anthropic</div>
+    <div class="claude-hero-logo">
+      <div class="claude-glow-ring">
+        <svg class="claude-mark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Claude by Anthropic">
+          <defs>
+            <linearGradient id="cg-top" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#FBCBA8"/>
+              <stop offset="100%" stop-color="#B85530"/>
+            </linearGradient>
+            <linearGradient id="cg-mid" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#F0A070"/>
+              <stop offset="100%" stop-color="#9E4520"/>
+            </linearGradient>
+            <linearGradient id="cg-low" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#D97757"/>
+              <stop offset="100%" stop-color="#7A3010"/>
+            </linearGradient>
+          </defs>
+
+          <!-- 0° — full brightness -->
+          <rect x="91" y="18" width="18" height="64" rx="9" fill="url(#cg-top)"                 transform="rotate(0   100 100)"/>
+          <!-- 45° -->
+          <rect x="91" y="18" width="18" height="64" rx="9" fill="url(#cg-top)" opacity=".82"  transform="rotate(45  100 100)"/>
+          <!-- 90° -->
+          <rect x="91" y="18" width="18" height="64" rx="9" fill="url(#cg-mid)" opacity=".64"  transform="rotate(90  100 100)"/>
+          <!-- 135° -->
+          <rect x="91" y="18" width="18" height="64" rx="9" fill="url(#cg-mid)" opacity=".44"  transform="rotate(135 100 100)"/>
+          <!-- 180° — dimmest -->
+          <rect x="91" y="18" width="18" height="64" rx="9" fill="url(#cg-low)" opacity=".28"  transform="rotate(180 100 100)"/>
+          <!-- 225° -->
+          <rect x="91" y="18" width="18" height="64" rx="9" fill="url(#cg-mid)" opacity=".44"  transform="rotate(225 100 100)"/>
+          <!-- 270° -->
+          <rect x="91" y="18" width="18" height="64" rx="9" fill="url(#cg-mid)" opacity=".64"  transform="rotate(270 100 100)"/>
+          <!-- 315° -->
+          <rect x="91" y="18" width="18" height="64" rx="9" fill="url(#cg-top)" opacity=".82"  transform="rotate(315 100 100)"/>
+        </svg>
+      </div>
+      <div class="claude-wordmark">
+        <span class="claude-wm-line"></span>
+        <span class="claude-wm-text">Claude<span class="claude-wm-dot"></span>Anthropic</span>
+        <span class="claude-wm-line r"></span>
+      </div>
     </div>
     <div class="hero-badge">✦ Skills Claude para PMEs brasileiras</div>
     <h1>IA prática para o<br /><em>dia a dia do seu negócio</em></h1>
