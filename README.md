@@ -9,11 +9,16 @@
 </p>
 
 <p align="center">
+  <a href="https://dheiver2.github.io/mangaba-ai-claude-skills/" target="_blank"><img src="https://img.shields.io/badge/🌐_Site-dheiver2.github.io-22c55e?style=flat-square" /></a>
   <a href="#-áreas-disponíveis"><img src="https://img.shields.io/badge/9_Áreas-Financeiro_·_Marketing_·_Vendas_·_RH_e_mais-blue?style=flat-square" /></a>
   <a href="#-como-usar"><img src="https://img.shields.io/badge/Compatível-Claude.ai_e_Claude_Code-purple?style=flat-square&logo=anthropic" /></a>
   <img src="https://img.shields.io/badge/Idioma-Português_BR-009c3b?style=flat-square" />
   <img src="https://img.shields.io/badge/Licença-MIT-yellow?style=flat-square" />
   <img src="https://img.shields.io/github/stars/dheiver2/mangaba-ai-claude-skills?style=flat-square&color=orange" />
+</p>
+
+<p align="center">
+  <a href="https://dheiver2.github.io/mangaba-ai-claude-skills/">🌐 <strong>Ver página do projeto</strong></a>
 </p>
 
 <br />
