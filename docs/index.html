@@ -396,26 +396,34 @@
     /* ── CLAUDE LOGO ── */
     .claude-logo-wrap {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      gap: 1rem;
       margin-bottom: 2rem;
     }
-    .claude-logo-badge {
+    .claude-logo-svg {
+      width: 96px;
+      height: 96px;
+      filter: drop-shadow(0 8px 24px rgba(217,119,87,.45));
+      animation: floatLogo 4s ease-in-out infinite;
+    }
+    @keyframes floatLogo {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-6px); }
+    }
+    .claude-logo-label {
       display: inline-flex;
       align-items: center;
-      gap: .6rem;
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.2);
+      gap: .45rem;
+      background: rgba(217,119,87,.15);
+      border: 1px solid rgba(217,119,87,.35);
       border-radius: 999px;
-      padding: .5rem 1.1rem .5rem .75rem;
-      font-size: .8rem;
-      font-weight: 600;
-      color: rgba(255,255,255,.9);
-      letter-spacing: .03em;
-      backdrop-filter: blur(4px);
-    }
-    .claude-logo-badge svg {
-      flex-shrink: 0;
+      padding: .3rem .9rem;
+      font-size: .78rem;
+      font-weight: 700;
+      color: #f5c6b0;
+      letter-spacing: .06em;
+      text-transform: uppercase;
     }
 
     /* ── POWERED BY STRIP ── */
@@ -472,14 +480,18 @@
 <section class="hero">
   <div class="hero-content">
     <div class="claude-logo-wrap">
-      <div class="claude-logo-badge">
-        <!-- Anthropic / Claude logo mark -->
-        <svg width="22" height="22" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Claude logo">
-          <path d="M31.84 9L23 23.5 14.16 9H7l16 27.5L39 9h-7.16z" fill="#D97757"/>
-          <path d="M23 23.5L14.16 9H7l9 15.5L23 23.5z" fill="#D97757" opacity=".7"/>
-        </svg>
-        Powered by Claude · Anthropic
-      </div>
+      <!-- Claude logo mark — radial capsule design, brand orange #D97757 -->
+      <svg class="claude-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Claude by Anthropic">
+        <rect x="46" y="8"  width="8" height="30" rx="4" fill="#D97757" transform="rotate(0   50 50)"/>
+        <rect x="46" y="8"  width="8" height="30" rx="4" fill="#D97757" transform="rotate(45  50 50)" opacity=".85"/>
+        <rect x="46" y="8"  width="8" height="30" rx="4" fill="#D97757" transform="rotate(90  50 50)" opacity=".7"/>
+        <rect x="46" y="8"  width="8" height="30" rx="4" fill="#D97757" transform="rotate(135 50 50)" opacity=".55"/>
+        <rect x="46" y="8"  width="8" height="30" rx="4" fill="#D97757" transform="rotate(180 50 50)" opacity=".4"/>
+        <rect x="46" y="8"  width="8" height="30" rx="4" fill="#D97757" transform="rotate(225 50 50)" opacity=".55"/>
+        <rect x="46" y="8"  width="8" height="30" rx="4" fill="#D97757" transform="rotate(270 50 50)" opacity=".7"/>
+        <rect x="46" y="8"  width="8" height="30" rx="4" fill="#D97757" transform="rotate(315 50 50)" opacity=".85"/>
+      </svg>
+      <div class="claude-logo-label">✦ Claude · Anthropic</div>
     </div>
     <div class="hero-badge">✦ Skills Claude para PMEs brasileiras</div>
     <h1>IA prática para o<br /><em>dia a dia do seu negócio</em></h1>
