@@ -4,509 +4,493 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mangaba AI — Claude Skills para PMEs</title>
-  <meta name="description" content="75 prompts prontos, agendamentos automáticos e artefatos profissionais para pequenas e médias empresas brasileiras usarem com Claude." />
+  <meta name="description" content="75 prompts prontos, agendamentos automáticos e artefatos profissionais para PMEs brasileiras usarem com Claude." />
   <meta property="og:title" content="Mangaba AI — Claude Skills para PMEs" />
   <meta property="og:description" content="75 prompts prontos para PMEs brasileiras: Financeiro, Marketing, Vendas, RH, Jurídico e mais." />
   <meta property="og:url" content="https://dheiver2.github.io/mangaba-ai-claude-skills/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --green-900: #1a3a2a;
-      --green-800: #1f4d37;
-      --green-700: #276044;
-      --green-600: #2d7a56;
-      --green-500: #38a169;
-      --green-400: #48bb78;
-      --green-300: #68d391;
-      --green-100: #c6f6d5;
-      --green-50:  #f0fff4;
-      --gray-900: #111827;
-      --gray-800: #1f2937;
-      --gray-700: #374151;
-      --gray-600: #4b5563;
-      --gray-400: #9ca3af;
-      --gray-200: #e5e7eb;
-      --gray-100: #f3f4f6;
-      --gray-50:  #f9fafb;
-      --white: #ffffff;
-      --radius: 12px;
-      --shadow: 0 4px 24px rgba(0,0,0,.08);
-      --shadow-lg: 0 12px 40px rgba(0,0,0,.12);
+      --bg:       #07090a;
+      --surface:  #0d1114;
+      --card:     rgba(255,255,255,.032);
+      --border:   rgba(255,255,255,.07);
+      --orange:   #D97757;
+      --orange-d: #b35c38;
+      --green:    #22c55e;
+      --text:     #eef2ee;
+      --sub:      rgba(238,242,238,.52);
+      --muted:    rgba(238,242,238,.28);
+      --r:        14px;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', system-ui, sans-serif;
-      color: var(--gray-800);
-      background: var(--white);
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    /* ── NAV ── */
+    /* ─────────────────── NAV ─────────────────── */
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255,255,255,.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--gray-200);
-      padding: 0 1.5rem;
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 200;
+      padding: 0 2rem;
+      background: rgba(7,9,10,.75);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
     }
     .nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      max-width: 1160px; margin: 0 auto;
+      height: 62px;
+      display: flex; align-items: center; justify-content: space-between;
     }
     .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: .5rem;
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: var(--green-800);
-      text-decoration: none;
+      display: flex; align-items: center; gap: .5rem;
+      font-weight: 800; font-size: 1rem; letter-spacing: -.01em;
+      color: var(--text); text-decoration: none;
     }
-    .nav-logo span { font-size: 1.4rem; }
-    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
     .nav-links a {
-      font-size: .9rem;
-      font-weight: 500;
-      color: var(--gray-600);
-      text-decoration: none;
-      transition: color .2s;
+      font-size: .86rem; font-weight: 500;
+      color: var(--sub); text-decoration: none;
+      transition: color .18s;
     }
-    .nav-links a:hover { color: var(--green-600); }
-    .btn-nav {
-      background: var(--green-600);
-      color: var(--white) !important;
-      padding: .45rem 1rem;
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--orange);
+      color: #fff !important;
+      padding: .42rem 1rem;
       border-radius: 8px;
-      transition: background .2s !important;
+      font-weight: 700 !important;
+      transition: opacity .2s !important;
     }
-    .btn-nav:hover { background: var(--green-700) !important; }
+    .nav-cta:hover { opacity: .82 !important; }
 
-    /* ── HERO ── */
+    /* ─────────────────── HERO ─────────────────── */
     .hero {
-      background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 60%, var(--green-500) 100%);
-      color: var(--white);
-      padding: 6rem 1.5rem 5rem;
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
       text-align: center;
-      position: relative;
-      overflow: hidden;
+      padding: 8rem 1.5rem 6rem;
+      position: relative; overflow: hidden;
     }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
-    .hero-content { position: relative; max-width: 760px; margin: 0 auto; }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: .4rem;
-      background: rgba(255,255,255,.15);
-      border: 1px solid rgba(255,255,255,.25);
-      color: var(--green-100);
-      font-size: .8rem;
-      font-weight: 600;
-      padding: .3rem .85rem;
-      border-radius: 999px;
-      margin-bottom: 1.5rem;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 1.25rem;
-      letter-spacing: -.02em;
-    }
-    .hero h1 em {
-      font-style: normal;
-      color: var(--green-300);
-    }
-    .hero p {
-      font-size: 1.15rem;
-      color: rgba(255,255,255,.8);
-      max-width: 560px;
-      margin: 0 auto 2.5rem;
-    }
-    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--white);
-      color: var(--green-800);
-      font-weight: 700;
-      font-size: .95rem;
-      padding: .8rem 1.8rem;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: transform .2s, box-shadow .2s;
-      box-shadow: 0 4px 16px rgba(0,0,0,.2);
-    }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.25); }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid rgba(255,255,255,.5);
-      color: var(--white);
-      font-weight: 600;
-      font-size: .95rem;
-      padding: .8rem 1.8rem;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: background .2s, border-color .2s;
-    }
-    .btn-outline:hover { background: rgba(255,255,255,.1); border-color: var(--white); }
 
-    /* ── STATS ── */
-    .stats {
-      background: var(--white);
-      border-bottom: 1px solid var(--gray-200);
-      padding: 2rem 1.5rem;
+    /* mesh gradient blobs */
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 700px 500px at 10% 20%,  rgba(217,119,87,.13) 0%, transparent 70%),
+        radial-gradient(ellipse 600px 600px at 90% 80%,  rgba(34,197,94,.08)  0%, transparent 70%),
+        radial-gradient(ellipse 900px 400px at 50% 110%, rgba(45,85,60,.18)   0%, transparent 65%),
+        var(--bg);
+    }
+
+    /* subtle dot grid */
+    .hero-grid {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background-image:
+        radial-gradient(rgba(255,255,255,.09) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 100%);
+    }
+
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 840px; margin: 0 auto;
+    }
+
+    /* ── Claude logo block ── */
+    .claude-block {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 1.25rem; margin-bottom: 3.25rem;
+    }
+
+    .claude-ring-wrap {
+      position: relative;
+      width: 210px; height: 210px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* three concentric animated rings */
+    .c-ring {
+      position: absolute; border-radius: 50%;
+      border: 1px solid rgba(217,119,87,.18);
+    }
+    .c-ring-1 { inset: 0;    animation: ringPulse 4s ease-in-out infinite; }
+    .c-ring-2 { inset: 22px; animation: ringPulse 4s ease-in-out .8s infinite; }
+    .c-ring-3 { inset: 44px; animation: ringPulse 4s ease-in-out 1.6s infinite; border-color: rgba(217,119,87,.1); }
+
+    @keyframes ringPulse {
+      0%,100% { transform: scale(1);    opacity: 1; }
+      50%      { transform: scale(1.04); opacity: .45; }
+    }
+
+    /* ambient glow */
+    .c-glow {
+      position: absolute;
+      width: 170px; height: 170px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(217,119,87,.35) 0%, transparent 70%);
+      animation: glowBreath 3s ease-in-out infinite;
+    }
+    @keyframes glowBreath {
+      0%,100% { transform: scale(.75); opacity: .55; }
+      50%      { transform: scale(1.1); opacity: 1; }
+    }
+
+    /* the actual SVG mark */
+    .claude-svg {
+      width: 130px; height: 130px;
+      position: relative; z-index: 2;
+      filter:
+        drop-shadow(0 0  8px rgba(217,119,87,1))
+        drop-shadow(0 0 24px rgba(217,119,87,.8))
+        drop-shadow(0 0 56px rgba(217,119,87,.45))
+        drop-shadow(0 0 90px rgba(217,119,87,.2));
+      animation: logoFloat 6s ease-in-out infinite;
+    }
+    @keyframes logoFloat {
+      0%   { transform: translateY(0)     rotate(0deg); }
+      33%  { transform: translateY(-12px) rotate(5deg); }
+      66%  { transform: translateY(-5px)  rotate(-2deg); }
+      100% { transform: translateY(0)     rotate(0deg); }
+    }
+
+    /* "CLAUDE · ANTHROPIC" wordmark */
+    .claude-wordmark {
+      display: flex; align-items: center; gap: .8rem;
+    }
+    .wm-line {
+      height: 1px; width: 56px;
+      background: linear-gradient(90deg, transparent, rgba(217,119,87,.55));
+    }
+    .wm-line.r {
+      background: linear-gradient(90deg, rgba(217,119,87,.55), transparent);
+    }
+    .wm-text {
+      font-size: .68rem; font-weight: 800;
+      letter-spacing: .38em; text-transform: uppercase;
+      color: rgba(217,119,87,.85);
+    }
+
+    /* ── hero text ── */
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: .32rem 1rem;
+      font-size: .76rem; font-weight: 600;
+      color: var(--sub); letter-spacing: .04em;
+      margin-bottom: 1.5rem;
+    }
+    .live-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px rgba(34,197,94,.9);
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%,100% { opacity: 1; } 50% { opacity: .25; }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.2rem);
+      font-weight: 900; line-height: 1.08;
+      letter-spacing: -.035em;
+      margin-bottom: 1.5rem;
+    }
+    .grad {
+      background: linear-gradient(130deg, #F5A87A 0%, #D97757 40%, #e8895f 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem; color: var(--sub);
+      max-width: 600px; margin: 0 auto 2.75rem;
+      line-height: 1.75;
+    }
+
+    .hero-ctas {
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 4.5rem;
+    }
+    .btn-pri {
+      background: linear-gradient(140deg, #D97757 0%, #b75330 100%);
+      color: #fff; font-weight: 700; font-size: .95rem;
+      padding: .88rem 2.1rem; border-radius: 11px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(217,119,87,.45), 0 0 0 1px rgba(217,119,87,.25);
+      transition: transform .2s, box-shadow .2s;
+      display: inline-flex; align-items: center; gap: .5rem;
+    }
+    .btn-pri:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(217,119,87,.55), 0 0 0 1px rgba(217,119,87,.35);
+    }
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text); font-weight: 600; font-size: .95rem;
+      padding: .88rem 2.1rem; border-radius: 11px;
+      text-decoration: none;
+      transition: border-color .2s, background .2s;
+      display: inline-flex; align-items: center; gap: .5rem;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.04); }
+
+    /* scroll cue */
+    .scroll-cue {
+      position: absolute; bottom: 2.5rem; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: .35rem;
+      color: var(--muted); font-size: .7rem;
+      font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+      animation: scrollBounce 2.2s ease-in-out infinite;
+    }
+    @keyframes scrollBounce {
+      0%,100% { transform: translateX(-50%) translateY(0); opacity: .4; }
+      50%      { transform: translateX(-50%) translateY(7px); opacity: .85; }
+    }
+
+    /* ─────────────────── STATS ─────────────────── */
+    .stats-bar {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2.5rem 1.5rem;
     }
     .stats-inner {
-      max-width: 900px;
-      margin: 0 auto;
+      max-width: 960px; margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1rem;
-      text-align: center;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
     }
-    .stat-item { padding: 1rem; }
-    .stat-number {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--green-700);
-      line-height: 1;
-      margin-bottom: .3rem;
+    .stat-item {
+      text-align: center; padding: .75rem 1rem;
+      position: relative;
     }
-    .stat-label {
-      font-size: .85rem;
-      color: var(--gray-500, #6b7280);
-      font-weight: 500;
+    .stat-item + .stat-item::before {
+      content: '';
+      position: absolute; left: 0; top: 20%; bottom: 20%;
+      width: 1px; background: var(--border);
+    }
+    .stat-num {
+      font-size: 2.5rem; font-weight: 900; letter-spacing: -.04em;
+      line-height: 1; margin-bottom: .35rem;
+      background: linear-gradient(180deg, var(--text) 30%, var(--sub) 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .stat-lbl {
+      font-size: .78rem; color: var(--muted);
+      font-weight: 500; letter-spacing: .03em;
     }
 
-    /* ── SECTION ── */
-    section { padding: 5rem 1.5rem; }
-    .section-inner { max-width: 1100px; margin: 0 auto; }
-    .section-header { text-align: center; margin-bottom: 3rem; }
-    .section-tag {
-      display: inline-block;
-      background: var(--green-50);
-      color: var(--green-700);
-      font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      padding: .3rem .85rem;
-      border-radius: 999px;
-      margin-bottom: .85rem;
+    /* ─────────────────── AREAS ─────────────────── */
+    section { padding: 6rem 1.5rem; }
+    .section-inner { max-width: 1160px; margin: 0 auto; }
+
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .s-tag {
+      font-size: .7rem; font-weight: 800;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--orange); display: block; margin-bottom: .9rem;
     }
     .section-header h2 {
-      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-      font-weight: 800;
-      color: var(--gray-900);
-      letter-spacing: -.02em;
-      margin-bottom: .75rem;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900; letter-spacing: -.03em;
+      margin-bottom: .85rem;
     }
-    .section-header p {
-      font-size: 1.05rem;
-      color: var(--gray-600);
-      max-width: 560px;
-      margin: 0 auto;
-    }
+    .section-header p { font-size: 1rem; color: var(--sub); max-width: 560px; margin: 0 auto; }
 
-    /* ── AREAS GRID ── */
+    /* mosaic grid */
     .areas-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
     }
     .area-card {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      transition: transform .2s, box-shadow .2s, border-color .2s;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      gap: .75rem;
+      background: var(--bg);
+      padding: 1.8rem;
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column; gap: .9rem;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      transition: background .2s;
+      position: relative; overflow: hidden;
     }
-    .area-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--green-300);
+    .area-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: var(--accent-line, transparent);
+      transform: scaleX(0); transition: transform .25s;
+      transform-origin: left;
     }
-    .area-card-header { display: flex; align-items: center; gap: .75rem; }
-    .area-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      flex-shrink: 0;
+    .area-card:hover { background: var(--surface); }
+    .area-card:hover::before { transform: scaleX(1); }
+
+    .ac-top { display: flex; align-items: center; gap: .85rem; }
+    .ac-icon {
+      width: 46px; height: 46px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.45rem; flex-shrink: 0;
+      background: var(--icon-bg, rgba(255,255,255,.05));
     }
-    .area-card-title { font-weight: 700; font-size: 1rem; color: var(--gray-900); }
-    .area-card-desc { font-size: .875rem; color: var(--gray-600); line-height: 1.5; }
-    .area-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .4rem;
-      margin-top: .25rem;
-    }
+    .ac-title { font-size: 1rem; font-weight: 700; }
+    .ac-desc { font-size: .845rem; color: var(--sub); line-height: 1.55; flex: 1; }
+    .ac-tags { display: flex; flex-wrap: wrap; gap: .35rem; }
     .tag {
-      font-size: .72rem;
-      font-weight: 600;
-      padding: .2rem .55rem;
-      border-radius: 6px;
-      background: var(--gray-100);
-      color: var(--gray-600);
+      font-size: .68rem; font-weight: 600;
+      padding: .18rem .52rem; border-radius: 6px;
+      background: rgba(255,255,255,.05);
+      color: var(--muted); border: 1px solid var(--border);
     }
-    .area-meta {
-      display: flex;
-      gap: 1rem;
-      padding-top: .75rem;
-      border-top: 1px solid var(--gray-100);
-      font-size: .8rem;
-      color: var(--gray-500, #6b7280);
-      font-weight: 500;
+    .ac-footer {
+      display: flex; gap: 1.1rem;
+      padding-top: .85rem; border-top: 1px solid var(--border);
+      font-size: .77rem; color: var(--muted); font-weight: 500;
     }
-    .area-meta span { display: flex; align-items: center; gap: .3rem; }
 
-    /* icon bg colors */
-    .bg-green   { background: #dcfce7; }
-    .bg-blue    { background: #dbeafe; }
-    .bg-purple  { background: #ede9fe; }
-    .bg-orange  { background: #ffedd5; }
-    .bg-red     { background: #fee2e2; }
-    .bg-yellow  { background: #fef9c3; }
-    .bg-teal    { background: #ccfbf1; }
-    .bg-pink    { background: #fce7f3; }
-    .bg-indigo  { background: #e0e7ff; }
+    /* ─────────────────── TYPES ─────────────────── */
+    .types-bg { background: var(--surface); }
+    .types-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .type-card {
+      border: 1px solid var(--border); border-radius: var(--r);
+      padding: 2rem; background: var(--card);
+      transition: border-color .22s, transform .22s;
+      position: relative; overflow: hidden;
+    }
+    .type-card::after {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: var(--tc, transparent);
+    }
+    .type-card:hover { border-color: rgba(255,255,255,.13); transform: translateY(-3px); }
+    .type-emoji { font-size: 2.3rem; margin-bottom: 1rem; display: block; }
+    .type-card h3 { font-size: 1rem; font-weight: 800; margin-bottom: .5rem; }
+    .type-card p  { font-size: .855rem; color: var(--sub); margin-bottom: 1rem; line-height: 1.6; }
+    .type-card ul { padding-left: 1.1rem; font-size: .82rem; color: var(--sub); display: flex; flex-direction: column; gap: .3rem; }
 
-    /* ── HOW TO USE ── */
-    .how-section { background: var(--gray-50); }
+    /* ─────────────────── HOW TO ─────────────────── */
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 3rem;
+      gap: 1.25rem; margin-bottom: 3rem;
     }
     .step-card {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: var(--radius);
-      padding: 1.5rem;
+      border: 1px solid var(--border); border-radius: var(--r);
+      padding: 1.75rem; background: var(--card);
+      transition: border-color .22s;
     }
-    .step-number {
-      width: 36px;
-      height: 36px;
-      background: var(--green-600);
-      color: var(--white);
-      font-weight: 800;
-      font-size: .9rem;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1rem;
+    .step-card:hover { border-color: rgba(217,119,87,.35); }
+    .step-num {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: rgba(217,119,87,.1); border: 1px solid rgba(217,119,87,.28);
+      color: var(--orange); font-weight: 900; font-size: .88rem;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.1rem;
     }
-    .step-card h3 { font-size: .95rem; font-weight: 700; margin-bottom: .4rem; color: var(--gray-900); }
-    .step-card p { font-size: .85rem; color: var(--gray-600); }
+    .step-card h3 { font-size: .92rem; font-weight: 700; margin-bottom: .4rem; }
+    .step-card p  { font-size: .82rem; color: var(--sub); }
 
     .code-block {
-      background: var(--gray-900);
-      border-radius: var(--radius);
-      padding: 1.5rem 1.75rem;
-      overflow-x: auto;
+      background: #080a09;
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: var(--r);
+      padding: 1.75rem 2rem; overflow-x: auto;
     }
     .code-block pre {
-      font-family: 'Fira Code', 'Cascadia Code', 'Courier New', monospace;
-      font-size: .85rem;
-      line-height: 1.7;
-      color: #e2e8f0;
-      white-space: pre;
+      font-family: 'Fira Code','Cascadia Code','Courier New', monospace;
+      font-size: .84rem; line-height: 1.85; color: #bfc8bc;
     }
-    .code-block .comment { color: #68d391; }
-    .code-block .cmd     { color: #90cdf4; }
-    .code-block .flag    { color: #fbd38d; }
-    .code-block .val     { color: #fc8181; }
+    .cc { color: #4ade80; }
+    .cm { color: #7dd3fc; }
+    .cf { color: #fde68a; }
+    .cv { color: #fca5a5; }
+    .cs { color: #d9f99d; }
 
-    /* ── TYPES ── */
-    .types-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
-    }
-    .type-card {
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      display: flex;
-      flex-direction: column;
-      gap: .6rem;
-    }
-    .type-card.skill   { background: #f0fff4; border: 1px solid #c6f6d5; }
-    .type-card.sched   { background: #eff6ff; border: 1px solid #bfdbfe; }
-    .type-card.artef   { background: #fdf4ff; border: 1px solid #e9d5ff; }
-    .type-icon { font-size: 2rem; }
-    .type-card h3 { font-size: 1rem; font-weight: 700; color: var(--gray-900); }
-    .type-card p { font-size: .875rem; color: var(--gray-600); }
-    .type-card ul { padding-left: 1.1rem; font-size: .85rem; color: var(--gray-600); display: flex; flex-direction: column; gap: .25rem; }
-
-    /* ── CTA ── */
+    /* ─────────────────── CTA ─────────────────── */
     .cta-section {
-      background: linear-gradient(135deg, var(--green-900), var(--green-700));
-      color: var(--white);
-      text-align: center;
-      padding: 5rem 1.5rem;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      text-align: center; padding: 7rem 1.5rem;
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute;
+      width: 700px; height: 500px;
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      background: radial-gradient(ellipse, rgba(217,119,87,.1) 0%, transparent 65%);
+      pointer-events: none;
     }
     .cta-section h2 {
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      font-weight: 800;
-      margin-bottom: 1rem;
-      letter-spacing: -.02em;
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-weight: 900; letter-spacing: -.035em; margin-bottom: 1rem;
+      position: relative; z-index: 1;
     }
-    .cta-section p { color: rgba(255,255,255,.75); font-size: 1.05rem; margin-bottom: 2rem; }
-    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .cta-section p {
+      color: var(--sub); font-size: 1.05rem; margin-bottom: 2.5rem;
+      position: relative; z-index: 1;
+    }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
 
-    /* ── FOOTER ── */
+    /* ─────────────────── FOOTER ─────────────────── */
     footer {
-      background: var(--gray-900);
-      color: var(--gray-400);
-      text-align: center;
-      padding: 2rem 1.5rem;
-      font-size: .875rem;
+      background: #030506;
+      border-top: 1px solid var(--border);
+      padding: 3rem 1.5rem;
+      text-align: center; font-size: .85rem;
     }
-    footer a { color: var(--green-400); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-    footer .footer-logo { font-size: 1.5rem; margin-bottom: .5rem; }
+    .footer-inner { max-width: 600px; margin: 0 auto; }
+    .footer-mango { font-size: 2rem; margin-bottom: .75rem; display: block; }
+    .footer-title { font-weight: 800; font-size: 1rem; margin-bottom: .4rem; }
+    .footer-sub  { color: var(--muted); margin-bottom: 1.5rem; }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+    .footer-links a { color: var(--sub); text-decoration: none; transition: color .18s; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy { margin-top: 2rem; color: var(--muted); font-size: .78rem; }
 
-    /* ── CLAUDE LOGO ── */
-    .claude-hero-logo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 2.75rem;
+    /* ─────────────────── FADE-IN ─────────────────── */
+    .fi {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s ease;
     }
+    .fi.vis { opacity: 1; transform: none; }
+    .fi-d1 { transition-delay: .1s; }
+    .fi-d2 { transition-delay: .2s; }
+    .fi-d3 { transition-delay: .3s; }
 
-    .claude-glow-ring {
-      position: relative;
-      width: 180px;
-      height: 180px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .claude-glow-ring::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(217,119,87,.28) 0%, rgba(217,119,87,.08) 55%, transparent 75%);
-      animation: pulsate 3s ease-in-out infinite;
-    }
-    .claude-glow-ring::after {
-      content: '';
-      position: absolute;
-      inset: 18px;
-      border-radius: 50%;
-      border: 1px solid rgba(217,119,87,.2);
-      animation: pulsate 3s ease-in-out infinite reverse;
-    }
-    @keyframes pulsate {
-      0%, 100% { transform: scale(1);   opacity: 1; }
-      50%       { transform: scale(1.07); opacity: .6; }
-    }
-
-    .claude-mark {
-      width: 120px;
-      height: 120px;
-      position: relative;
-      z-index: 1;
-      filter:
-        drop-shadow(0 0 14px rgba(217,119,87,.9))
-        drop-shadow(0 0 36px rgba(217,119,87,.5))
-        drop-shadow(0 0 70px rgba(217,119,87,.25));
-      animation: floatMark 5s ease-in-out infinite;
-    }
-    @keyframes floatMark {
-      0%, 100% { transform: translateY(0)    rotate(0deg); }
-      50%       { transform: translateY(-9px) rotate(6deg); }
-    }
-
-    .claude-wordmark {
-      display: flex;
-      align-items: center;
-      gap: .9rem;
-    }
-    .claude-wm-line {
-      height: 1px;
-      width: 52px;
-      background: linear-gradient(90deg, transparent 0%, rgba(217,119,87,.65) 100%);
-    }
-    .claude-wm-line.r {
-      background: linear-gradient(90deg, rgba(217,119,87,.65) 0%, transparent 100%);
-    }
-    .claude-wm-text {
-      font-size: .72rem;
-      font-weight: 800;
-      letter-spacing: .32em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.82);
-    }
-    .claude-wm-dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: #D97757;
-      margin: 0 .15rem;
-      display: inline-block;
-      vertical-align: middle;
-    }
-
-    /* ── POWERED BY STRIP ── */
-    .powered-strip {
-      background: #1a1a1a;
-      color: rgba(255,255,255,.65);
-      text-align: center;
-      padding: .9rem 1.5rem;
-      font-size: .8rem;
-      font-weight: 500;
-      letter-spacing: .02em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: .5rem;
-      flex-wrap: wrap;
-    }
-    .powered-strip a {
-      color: #D97757;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: .35rem;
-    }
-    .powered-strip a:hover { text-decoration: underline; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
+    /* ─────────────────── RESPONSIVE ─────────────────── */
+    @media (max-width: 768px) {
       .nav-links { display: none; }
-      .hero { padding: 4rem 1rem 3.5rem; }
-      section { padding: 3.5rem 1rem; }
+      .hero { padding: 7rem 1rem 4.5rem; }
+      section { padding: 4rem 1rem; }
+      .stats-inner { grid-template-columns: repeat(3, 1fr); }
+      .stat-item:nth-child(4), .stat-item:nth-child(5) { grid-column: span 1; }
+      .stat-item + .stat-item::before { display: none; }
+    }
+    @media (max-width: 480px) {
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+      .claude-ring-wrap { width: 170px; height: 170px; }
+      .claude-svg { width: 105px; height: 105px; }
     }
   </style>
 </head>
@@ -520,287 +504,262 @@
     </a>
     <div class="nav-links">
       <a href="#areas">Áreas</a>
-      <a href="#como-usar">Como usar</a>
       <a href="#tipos">Tipos de skill</a>
-      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills" target="_blank" class="btn-nav">Ver no GitHub</a>
+      <a href="#como-usar">Como usar</a>
+      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills" target="_blank" class="nav-cta">GitHub ↗</a>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
   <div class="hero-content">
-    <div class="claude-hero-logo">
-      <div class="claude-glow-ring">
-        <svg class="claude-mark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Claude by Anthropic">
+
+    <!-- ── Claude logo ── -->
+    <div class="claude-block">
+      <div class="claude-ring-wrap">
+        <span class="c-ring c-ring-1"></span>
+        <span class="c-ring c-ring-2"></span>
+        <span class="c-ring c-ring-3"></span>
+        <div class="c-glow"></div>
+
+        <svg class="claude-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Claude by Anthropic">
           <defs>
-            <linearGradient id="cg-top" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%"   stop-color="#FBCBA8"/>
-              <stop offset="100%" stop-color="#B85530"/>
+            <linearGradient id="gc-a" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#FDD0A8"/>
+              <stop offset="100%" stop-color="#A84220"/>
             </linearGradient>
-            <linearGradient id="cg-mid" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%"   stop-color="#F0A070"/>
-              <stop offset="100%" stop-color="#9E4520"/>
+            <linearGradient id="gc-b" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#F5A070"/>
+              <stop offset="100%" stop-color="#8A3618"/>
             </linearGradient>
-            <linearGradient id="cg-low" x1="0" y1="0" x2="0" y2="1">
+            <linearGradient id="gc-c" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%"   stop-color="#D97757"/>
-              <stop offset="100%" stop-color="#7A3010"/>
+              <stop offset="100%" stop-color="#602810"/>
             </linearGradient>
           </defs>
-
-          <!-- 0° — full brightness -->
-          <rect x="91" y="18" width="18" height="64" rx="9" fill="url(#cg-top)"                 transform="rotate(0   100 100)"/>
-          <!-- 45° -->
-          <rect x="91" y="18" width="18" height="64" rx="9" fill="url(#cg-top)" opacity=".82"  transform="rotate(45  100 100)"/>
-          <!-- 90° -->
-          <rect x="91" y="18" width="18" height="64" rx="9" fill="url(#cg-mid)" opacity=".64"  transform="rotate(90  100 100)"/>
-          <!-- 135° -->
-          <rect x="91" y="18" width="18" height="64" rx="9" fill="url(#cg-mid)" opacity=".44"  transform="rotate(135 100 100)"/>
-          <!-- 180° — dimmest -->
-          <rect x="91" y="18" width="18" height="64" rx="9" fill="url(#cg-low)" opacity=".28"  transform="rotate(180 100 100)"/>
-          <!-- 225° -->
-          <rect x="91" y="18" width="18" height="64" rx="9" fill="url(#cg-mid)" opacity=".44"  transform="rotate(225 100 100)"/>
-          <!-- 270° -->
-          <rect x="91" y="18" width="18" height="64" rx="9" fill="url(#cg-mid)" opacity=".64"  transform="rotate(270 100 100)"/>
-          <!-- 315° -->
-          <rect x="91" y="18" width="18" height="64" rx="9" fill="url(#cg-top)" opacity=".82"  transform="rotate(315 100 100)"/>
+          <!-- 8 capsules — brightness cycles 1→0.28→1 across 360° -->
+          <rect x="91" y="16" width="18" height="68" rx="9" fill="url(#gc-a)"               transform="rotate(  0 100 100)"/>
+          <rect x="91" y="16" width="18" height="68" rx="9" fill="url(#gc-a)" opacity=".80" transform="rotate( 45 100 100)"/>
+          <rect x="91" y="16" width="18" height="68" rx="9" fill="url(#gc-b)" opacity=".60" transform="rotate( 90 100 100)"/>
+          <rect x="91" y="16" width="18" height="68" rx="9" fill="url(#gc-b)" opacity=".40" transform="rotate(135 100 100)"/>
+          <rect x="91" y="16" width="18" height="68" rx="9" fill="url(#gc-c)" opacity=".26" transform="rotate(180 100 100)"/>
+          <rect x="91" y="16" width="18" height="68" rx="9" fill="url(#gc-b)" opacity=".40" transform="rotate(225 100 100)"/>
+          <rect x="91" y="16" width="18" height="68" rx="9" fill="url(#gc-b)" opacity=".60" transform="rotate(270 100 100)"/>
+          <rect x="91" y="16" width="18" height="68" rx="9" fill="url(#gc-a)" opacity=".80" transform="rotate(315 100 100)"/>
         </svg>
       </div>
+
       <div class="claude-wordmark">
-        <span class="claude-wm-line"></span>
-        <span class="claude-wm-text">Claude<span class="claude-wm-dot"></span>Anthropic</span>
-        <span class="claude-wm-line r"></span>
+        <span class="wm-line"></span>
+        <span class="wm-text">Claude &nbsp;·&nbsp; Anthropic</span>
+        <span class="wm-line r"></span>
       </div>
     </div>
-    <div class="hero-badge">✦ Skills Claude para PMEs brasileiras</div>
-    <h1>IA prática para o<br /><em>dia a dia do seu negócio</em></h1>
-    <p>75 prompts prontos, agendamentos automáticos e artefatos profissionais — use com Claude sem precisar saber escrever prompt.</p>
-    <div class="hero-actions">
-      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills" target="_blank" class="btn-primary">
-        ⬇ Acessar o repositório
-      </a>
-      <a href="#areas" class="btn-outline">Ver todas as áreas</a>
+
+    <div class="hero-badge">
+      <span class="live-dot"></span>
+      75 prompts prontos para PMEs brasileiras
     </div>
+
+    <h1>IA que trabalha pelo<br /><span class="grad">seu negócio</span></h1>
+
+    <p class="hero-sub">
+      Prompts prontos, agendamentos automáticos e documentos profissionais —
+      copie, cole no Claude e receba o resultado.
+      Sem precisar saber escrever prompt.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills" target="_blank" class="btn-pri">
+        ⬇&ensp;Baixar no GitHub
+      </a>
+      <a href="#areas" class="btn-ghost">
+        Ver as 9 áreas &ensp;↓
+      </a>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>scroll</span>
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+      <path d="M8 2v12M3 10l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
   </div>
 </section>
 
-<!-- STATS -->
-<div class="stats">
+<!-- STATS BAR -->
+<div class="stats-bar fi">
   <div class="stats-inner">
     <div class="stat-item">
-      <div class="stat-number">75</div>
-      <div class="stat-label">Arquivos prontos</div>
+      <div class="stat-num" data-to="75">0</div>
+      <div class="stat-lbl">Arquivos prontos</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">9</div>
-      <div class="stat-label">Áreas de negócio</div>
+      <div class="stat-num" data-to="9">0</div>
+      <div class="stat-lbl">Áreas de negócio</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">27</div>
-      <div class="stat-label">Skills avulsas</div>
+      <div class="stat-num" data-to="27">0</div>
+      <div class="stat-lbl">Skills avulsas</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">18</div>
-      <div class="stat-label">Agendamentos</div>
+      <div class="stat-num" data-to="18">0</div>
+      <div class="stat-lbl">Agendamentos</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">100%</div>
-      <div class="stat-label">Em português BR</div>
+      <div class="stat-num">100%</div>
+      <div class="stat-lbl">Em português BR</div>
     </div>
   </div>
-</div>
-
-<!-- POWERED BY STRIP -->
-<div class="powered-strip">
-  <span>Feito para funcionar com</span>
-  <a href="https://claude.ai" target="_blank" rel="noopener">
-    <svg width="16" height="16" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M31.84 9L23 23.5 14.16 9H7l16 27.5L39 9h-7.16z" fill="#D97757"/>
-    </svg>
-    Claude by Anthropic
-  </a>
-  <span>— copie o prompt, cole no Claude e receba o resultado.</span>
 </div>
 
 <!-- AREAS -->
 <section id="areas">
   <div class="section-inner">
-    <div class="section-header">
-      <div class="section-tag">9 áreas cobertas</div>
+    <div class="section-header fi">
+      <span class="s-tag">9 áreas cobertas</span>
       <h2>Tudo que sua PME precisa</h2>
       <p>Cada área tem skills avulsas, tarefas agendadas e artefatos prontos para gerar documentos profissionais.</p>
     </div>
 
-    <div class="areas-grid">
+    <div class="areas-grid fi fi-d1">
 
-      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills/tree/master/financeiro" target="_blank" class="area-card">
-        <div class="area-card-header">
-          <div class="area-icon bg-green">💰</div>
-          <div class="area-card-title">Financeiro</div>
+      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills/tree/master/financeiro" target="_blank" class="area-card"
+         style="--accent-line: linear-gradient(90deg,#22c55e,#16a34a); --icon-bg: rgba(34,197,94,.1)">
+        <div class="ac-top">
+          <div class="ac-icon">💰</div>
+          <div class="ac-title">Financeiro</div>
         </div>
-        <p class="area-card-desc">Fluxo de caixa, DRE, previsão de receita, análise de despesas e faturas profissionais.</p>
-        <div class="area-tags">
-          <span class="tag">Fluxo de caixa</span>
-          <span class="tag">DRE</span>
-          <span class="tag">Forecast</span>
-          <span class="tag">Fatura</span>
+        <p class="ac-desc">Fluxo de caixa, DRE, previsão de receita, análise de despesas e faturas profissionais.</p>
+        <div class="ac-tags">
+          <span class="tag">Fluxo de caixa</span><span class="tag">DRE</span><span class="tag">Forecast</span><span class="tag">Fatura</span>
         </div>
-        <div class="area-meta">
-          <span>📋 3 skills</span>
-          <span>⏰ 3 agendamentos</span>
-          <span>📄 3 artefatos</span>
+        <div class="ac-footer">
+          <span>📋 3 skills</span><span>⏰ 3 agend.</span><span>📄 3 artefatos</span>
         </div>
       </a>
 
-      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills/tree/master/marketing" target="_blank" class="area-card">
-        <div class="area-card-header">
-          <div class="area-icon bg-blue">📣</div>
-          <div class="area-card-title">Marketing Digital</div>
+      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills/tree/master/marketing" target="_blank" class="area-card"
+         style="--accent-line: linear-gradient(90deg,#3b82f6,#2563eb); --icon-bg: rgba(59,130,246,.1)">
+        <div class="ac-top">
+          <div class="ac-icon">📣</div>
+          <div class="ac-title">Marketing Digital</div>
         </div>
-        <p class="area-card-desc">Posts para redes sociais, email marketing, calendário editorial e análise de engajamento.</p>
-        <div class="area-tags">
-          <span class="tag">Instagram</span>
-          <span class="tag">LinkedIn</span>
-          <span class="tag">Email</span>
-          <span class="tag">SEO</span>
+        <p class="ac-desc">Posts para redes sociais, email marketing, calendário editorial e análise de engajamento.</p>
+        <div class="ac-tags">
+          <span class="tag">Instagram</span><span class="tag">Email</span><span class="tag">Calendário</span><span class="tag">Copies</span>
         </div>
-        <div class="area-meta">
-          <span>📋 3 skills</span>
-          <span>⏰ 2 agendamentos</span>
-          <span>📄 2 artefatos</span>
+        <div class="ac-footer">
+          <span>📋 3 skills</span><span>⏰ 3 agend.</span><span>📄 3 artefatos</span>
         </div>
       </a>
 
-      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills/tree/master/vendas" target="_blank" class="area-card">
-        <div class="area-card-header">
-          <div class="area-icon bg-orange">🤝</div>
-          <div class="area-card-title">Vendas</div>
+      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills/tree/master/vendas" target="_blank" class="area-card"
+         style="--accent-line: linear-gradient(90deg,#a855f7,#7c3aed); --icon-bg: rgba(168,85,247,.1)">
+        <div class="ac-top">
+          <div class="ac-icon">🤝</div>
+          <div class="ac-title">Vendas</div>
         </div>
-        <p class="area-card-desc">Scripts de prospecção, análise de pipeline, sequências de follow-up e forecast mensal.</p>
-        <div class="area-tags">
-          <span class="tag">Prospecção</span>
-          <span class="tag">Pipeline</span>
-          <span class="tag">Follow-up</span>
-          <span class="tag">Playbook</span>
+        <p class="ac-desc">Scripts de prospecção, follow-up automatizado, propostas comerciais e análise de pipeline.</p>
+        <div class="ac-tags">
+          <span class="tag">Prospecção</span><span class="tag">Follow-up</span><span class="tag">Proposta</span><span class="tag">Pipeline</span>
         </div>
-        <div class="area-meta">
-          <span>📋 3 skills</span>
-          <span>⏰ 2 agendamentos</span>
-          <span>📄 2 artefatos</span>
+        <div class="ac-footer">
+          <span>📋 3 skills</span><span>⏰ 3 agend.</span><span>📄 3 artefatos</span>
         </div>
       </a>
 
-      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills/tree/master/atendimento" target="_blank" class="area-card">
-        <div class="area-card-header">
-          <div class="area-icon bg-teal">💬</div>
-          <div class="area-card-title">Atendimento ao Cliente</div>
+      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills/tree/master/rh" target="_blank" class="area-card"
+         style="--accent-line: linear-gradient(90deg,#ec4899,#be185d); --icon-bg: rgba(236,72,153,.1)">
+        <div class="ac-top">
+          <div class="ac-icon">👥</div>
+          <div class="ac-title">RH &amp; Pessoas</div>
         </div>
-        <p class="area-card-desc">Respostas a reclamações, FAQ automático, pesquisa NPS e scripts para WhatsApp Business.</p>
-        <div class="area-tags">
-          <span class="tag">WhatsApp</span>
-          <span class="tag">NPS</span>
-          <span class="tag">FAQ</span>
-          <span class="tag">Reclame Aqui</span>
+        <p class="ac-desc">Descrições de vagas, avaliação de desempenho, onboarding e comunicados internos.</p>
+        <div class="ac-tags">
+          <span class="tag">Recrutamento</span><span class="tag">Avaliação</span><span class="tag">Onboarding</span>
         </div>
-        <div class="area-meta">
-          <span>📋 3 skills</span>
-          <span>⏰ 1 agendamento</span>
-          <span>📄 2 artefatos</span>
+        <div class="ac-footer">
+          <span>📋 3 skills</span><span>⏰ 3 agend.</span><span>📄 3 artefatos</span>
         </div>
       </a>
 
-      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills/tree/master/rh" target="_blank" class="area-card">
-        <div class="area-card-header">
-          <div class="area-icon bg-purple">👥</div>
-          <div class="area-card-title">RH e Pessoas</div>
+      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills/tree/master/juridico" target="_blank" class="area-card"
+         style="--accent-line: linear-gradient(90deg,#f59e0b,#d97706); --icon-bg: rgba(245,158,11,.1)">
+        <div class="ac-top">
+          <div class="ac-icon">⚖️</div>
+          <div class="ac-title">Jurídico</div>
         </div>
-        <p class="area-card-desc">Descrição de vagas, roteiro de entrevistas, avaliação de desempenho e onboarding 30/60/90.</p>
-        <div class="area-tags">
-          <span class="tag">Vagas</span>
-          <span class="tag">Entrevista</span>
-          <span class="tag">Onboarding</span>
-          <span class="tag">PDI</span>
+        <p class="ac-desc">Revisão de contratos, termos de uso, política de privacidade LGPD e notificações extrajudiciais.</p>
+        <div class="ac-tags">
+          <span class="tag">Contratos</span><span class="tag">LGPD</span><span class="tag">Termos de uso</span>
         </div>
-        <div class="area-meta">
-          <span>📋 3 skills</span>
-          <span>⏰ 2 agendamentos</span>
-          <span>📄 2 artefatos</span>
+        <div class="ac-footer">
+          <span>📋 3 skills</span><span>⏰ 2 agend.</span><span>📄 3 artefatos</span>
         </div>
       </a>
 
-      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills/tree/master/juridico" target="_blank" class="area-card">
-        <div class="area-card-header">
-          <div class="area-icon bg-red">⚖️</div>
-          <div class="area-card-title">Jurídico</div>
+      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills/tree/master/operacional" target="_blank" class="area-card"
+         style="--accent-line: linear-gradient(90deg,#14b8a6,#0f766e); --icon-bg: rgba(20,184,166,.1)">
+        <div class="ac-top">
+          <div class="ac-icon">⚙️</div>
+          <div class="ac-title">Operacional</div>
         </div>
-        <p class="area-card-desc">Revisão de contratos, notificação extrajudicial, diagnóstico LGPD e monitoramento de compliance.</p>
-        <div class="area-tags">
-          <span class="tag">Contratos</span>
-          <span class="tag">LGPD</span>
-          <span class="tag">Compliance</span>
-          <span class="tag">Notificação</span>
+        <p class="ac-desc">Processos internos, checklists, relatórios de reunião, gestão de fornecedores e KPIs operacionais.</p>
+        <div class="ac-tags">
+          <span class="tag">Processos</span><span class="tag">Checklist</span><span class="tag">KPIs</span>
         </div>
-        <div class="area-meta">
-          <span>📋 3 skills</span>
-          <span>⏰ 2 agendamentos</span>
-          <span>📄 2 artefatos</span>
+        <div class="ac-footer">
+          <span>📋 3 skills</span><span>⏰ 2 agend.</span><span>📄 3 artefatos</span>
         </div>
       </a>
 
-      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills/tree/master/operacional" target="_blank" class="area-card">
-        <div class="area-card-header">
-          <div class="area-icon bg-yellow">⚙️</div>
-          <div class="area-card-title">Operacional</div>
+      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills/tree/master/fiscal" target="_blank" class="area-card"
+         style="--accent-line: linear-gradient(90deg,#ef4444,#dc2626); --icon-bg: rgba(239,68,68,.1)">
+        <div class="ac-top">
+          <div class="ac-icon">🧾</div>
+          <div class="ac-title">Fiscal &amp; Tributário</div>
         </div>
-        <p class="area-card-desc">Mapeamento de processos, checklists de qualidade, SOPs e plano de continuidade de negócios.</p>
-        <div class="area-tags">
-          <span class="tag">Processos</span>
-          <span class="tag">SOP</span>
-          <span class="tag">Qualidade</span>
-          <span class="tag">Gargalos</span>
+        <p class="ac-desc">Cálculo do Simples Nacional, DAS, fator "r", obrigações acessórias e planejamento tributário.</p>
+        <div class="ac-tags">
+          <span class="tag">Simples Nacional</span><span class="tag">DAS</span><span class="tag">IRPJ</span>
         </div>
-        <div class="area-meta">
-          <span>📋 3 skills</span>
-          <span>⏰ 2 agendamentos</span>
-          <span>📄 2 artefatos</span>
+        <div class="ac-footer">
+          <span>📋 3 skills</span><span>⏰ 2 agend.</span><span>📄 3 artefatos</span>
         </div>
       </a>
 
-      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills/tree/master/fiscal" target="_blank" class="area-card">
-        <div class="area-card-header">
-          <div class="area-icon bg-green">🧾</div>
-          <div class="area-card-title">Fiscal e Contábil</div>
+      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills/tree/master/atendimento" target="_blank" class="area-card"
+         style="--accent-line: linear-gradient(90deg,#f97316,#ea580c); --icon-bg: rgba(249,115,22,.1)">
+        <div class="ac-top">
+          <div class="ac-icon">💬</div>
+          <div class="ac-title">Atendimento</div>
         </div>
-        <p class="area-card-desc">Análise de regime tributário, Simples Nacional, planejamento fiscal e calendário de obrigações.</p>
-        <div class="area-tags">
-          <span class="tag">Simples Nacional</span>
-          <span class="tag">DAS</span>
-          <span class="tag">Planejamento</span>
-          <span class="tag">IRPJ</span>
+        <p class="ac-desc">Respostas para reclamações, pesquisa de satisfação, scripts de suporte e gestão de reviews.</p>
+        <div class="ac-tags">
+          <span class="tag">SAC</span><span class="tag">NPS</span><span class="tag">Reviews</span>
         </div>
-        <div class="area-meta">
-          <span>📋 3 skills</span>
-          <span>⏰ 2 agendamentos</span>
-          <span>📄 2 artefatos</span>
+        <div class="ac-footer">
+          <span>📋 3 skills</span><span>⏰ 2 agend.</span><span>📄 3 artefatos</span>
         </div>
       </a>
 
-      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills/tree/master/tecnologia" target="_blank" class="area-card">
-        <div class="area-card-header">
-          <div class="area-icon bg-indigo">💻</div>
-          <div class="area-card-title">Tecnologia e TI</div>
+      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills/tree/master/tecnologia" target="_blank" class="area-card"
+         style="--accent-line: linear-gradient(90deg,#6366f1,#4f46e5); --icon-bg: rgba(99,102,241,.1)">
+        <div class="ac-top">
+          <div class="ac-icon">💻</div>
+          <div class="ac-title">Tecnologia</div>
         </div>
-        <p class="area-card-desc">Seleção de software, política de segurança, mapa de automações e plano de backup.</p>
-        <div class="area-tags">
-          <span class="tag">Software</span>
-          <span class="tag">Segurança</span>
-          <span class="tag">Automação</span>
-          <span class="tag">Backup</span>
+        <p class="ac-desc">Especificação técnica, plano de testes, documentação de API e análise de segurança básica.</p>
+        <div class="ac-tags">
+          <span class="tag">Docs técnicas</span><span class="tag">Testes</span><span class="tag">Segurança</span>
         </div>
-        <div class="area-meta">
-          <span>📋 3 skills</span>
-          <span>⏰ 2 agendamentos</span>
-          <span>📄 2 artefatos</span>
+        <div class="ac-footer">
+          <span>📋 3 skills</span><span>⏰ 2 agend.</span><span>📄 3 artefatos</span>
         </div>
       </a>
 
@@ -808,98 +767,95 @@
   </div>
 </section>
 
-<!-- TIPOS -->
-<section id="tipos" style="background: var(--gray-50); border-top: 1px solid var(--gray-200);">
+<!-- TYPES -->
+<section id="tipos" class="types-bg">
   <div class="section-inner">
-    <div class="section-header">
-      <div class="section-tag">3 tipos de arquivo</div>
-      <h2>Cada arquivo tem um propósito</h2>
-      <p>Skills avulsas para uso imediato, agendamentos para automação e artefatos para gerar documentos.</p>
+    <div class="section-header fi">
+      <span class="s-tag">O que você encontra</span>
+      <h2>3 tipos de arquivo</h2>
+      <p>Cada área contém os três tipos para cobrir diferentes momentos do seu dia de trabalho.</p>
     </div>
     <div class="types-grid">
-      <div class="type-card skill">
-        <div class="type-icon">📋</div>
-        <h3>Skills Avulsas</h3>
-        <p>Prompts para usar quando precisar. Copie, preencha os <code>[CAMPOS]</code> e cole no Claude.</p>
+      <div class="type-card fi fi-d1" style="--tc: linear-gradient(90deg,#22c55e,transparent)">
+        <span class="type-emoji">⚡</span>
+        <h3>Skills</h3>
+        <p>Prompts avulsos prontos para usar a qualquer momento. Cole no Claude, preencha os campos e receba o resultado.</p>
         <ul>
           <li>Análise de fluxo de caixa</li>
-          <li>Criação de post para redes sociais</li>
+          <li>Script de prospecção</li>
           <li>Revisão de contrato</li>
-          <li>Descrição de vaga de emprego</li>
+          <li>Post para Instagram</li>
         </ul>
       </div>
-      <div class="type-card sched">
-        <div class="type-icon">⏰</div>
-        <h3>Scheduled Tasks</h3>
-        <p>Tarefas automáticas com Claude Code CLI. Configure uma vez, roda sozinha todo dia/semana/mês.</p>
+      <div class="type-card fi fi-d2" style="--tc: linear-gradient(90deg,#3b82f6,transparent)">
+        <span class="type-emoji">⏰</span>
+        <h3>Scheduled</h3>
+        <p>Tarefas que rodam automaticamente via Claude Code. Configure uma vez e a IA trabalha no horário que você definir.</p>
         <ul>
-          <li>Relatório diário de vendas (18h)</li>
-          <li>Resumo semanal financeiro (sexta)</li>
-          <li>Calendário editorial semanal</li>
-          <li>Fechamento mensal com DRE</li>
+          <li>Relatório diário de vendas (9h)</li>
+          <li>Resumo semanal financeiro</li>
+          <li>Briefing mensal de métricas</li>
+          <li>Alerta de vencimentos</li>
         </ul>
       </div>
-      <div class="type-card artef">
-        <div class="type-icon">📄</div>
+      <div class="type-card fi fi-d3" style="--tc: linear-gradient(90deg,#a855f7,transparent)">
+        <span class="type-emoji">📄</span>
         <h3>Artefatos</h3>
-        <p>Templates que geram documentos completos e prontos para usar com clientes e equipe.</p>
+        <p>Documentos profissionais completos gerados pelo Claude: faturas, contratos, relatórios e apresentações.</p>
         <ul>
-          <li>Fatura profissional</li>
+          <li>Fatura / Nota de cobrança</li>
           <li>Proposta comercial</li>
-          <li>Contrato de prestação de serviços</li>
-          <li>Playbook de vendas</li>
+          <li>Política de privacidade</li>
+          <li>Relatório de desempenho</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COMO USAR -->
+<!-- HOW TO USE -->
 <section id="como-usar">
   <div class="section-inner">
-    <div class="section-header">
-      <div class="section-tag">Simples assim</div>
-      <h2>Como usar em 4 passos</h2>
-      <p>Sem instalação, sem configuração. Use direto no claude.ai ou com Claude Code para automações.</p>
+    <div class="section-header fi">
+      <span class="s-tag">Começando agora</span>
+      <h2>Usando em 4 passos</h2>
+      <p>Sem instalação, sem configuração complexa. Só copiar, colar e preencher.</p>
     </div>
 
-    <div class="steps-grid">
+    <div class="steps-grid fi fi-d1">
       <div class="step-card">
-        <div class="step-number">1</div>
-        <h3>Escolha a skill</h3>
-        <p>Navegue pelas 9 áreas e encontre o arquivo <code>.md</code> que resolve seu problema.</p>
+        <div class="step-num">1</div>
+        <h3>Clone o repositório</h3>
+        <p>Baixe todos os arquivos de uma vez ou navegue pela pasta no GitHub.</p>
       </div>
       <div class="step-card">
-        <div class="step-number">2</div>
-        <h3>Copie o prompt</h3>
-        <p>Cada arquivo tem um bloco <strong>"## Prompt"</strong> — copie ele inteiro.</p>
+        <div class="step-num">2</div>
+        <h3>Escolha o prompt</h3>
+        <p>Cada área tem skills avulsas, agendadas e artefatos. Escolha o que precisa agora.</p>
       </div>
       <div class="step-card">
-        <div class="step-number">3</div>
-        <h3>Preencha os dados</h3>
-        <p>Substitua os campos em <code>[COLCHETES]</code> com as informações reais da sua empresa.</p>
+        <div class="step-num">3</div>
+        <h3>Preencha os campos</h3>
+        <p>Substitua os campos em <code style="color:var(--orange);font-size:.8rem">[COLCHETES]</code> com os dados reais da sua empresa.</p>
       </div>
       <div class="step-card">
-        <div class="step-number">4</div>
+        <div class="step-num">4</div>
         <h3>Cole no Claude</h3>
-        <p>Abra o <a href="https://claude.ai" target="_blank" style="color:var(--green-600)">claude.ai</a>, cole o prompt preenchido e receba o resultado.</p>
+        <p>Abra claude.ai ou o Claude Code, cole o prompt preenchido e receba o resultado pronto.</p>
       </div>
     </div>
 
-    <div class="code-block">
-      <pre><span class="comment"># Para automações com Claude Code CLI</span>
+    <div class="code-block fi fi-d2">
+      <pre><span class="cc"># 1. Clone o repositório</span>
+<span class="cm">git</span> <span class="cf">clone</span> <span class="cs">https://github.com/dheiver2/mangaba-ai-claude-skills</span>
 
-<span class="comment"># 1. Instalar</span>
-<span class="cmd">npm</span> install -g @anthropic-ai/claude-code
+<span class="cc"># 2. Agendar tarefa automática (precisa do Claude Code)</span>
+<span class="cm">claude</span> <span class="cf">schedule</span> <span class="cv">create</span> <span class="cs">"Relatório diário de vendas"</span> \
+  <span class="cf">--cron</span> <span class="cs">"0 9 * * 1-5"</span> \
+  <span class="cf">--prompt-file</span> <span class="cs">vendas/scheduled/relatorio-vendas.md</span>
 
-<span class="comment"># 2. Clonar o repositório</span>
-<span class="cmd">git</span> clone https://github.com/dheiver2/mangaba-ai-claude-skills.git
-
-<span class="comment"># 3. Criar agendamento — relatório todo dia às 18h</span>
-<span class="cmd">claude</span> schedule create \
-  <span class="flag">--name</span> <span class="val">"relatorio-diario"</span> \
-  <span class="flag">--cron</span> <span class="val">"0 18 * * 1-5"</span> \
-  <span class="flag">--prompt-file</span> financeiro/scheduled/relatorio-diario-vendas.md</pre>
+<span class="cc"># 3. Listar agendamentos ativos</span>
+<span class="cm">claude</span> <span class="cf">schedule</span> <span class="cv">list</span></pre>
     </div>
   </div>
 </section>
@@ -907,14 +863,14 @@
 <!-- CTA -->
 <section class="cta-section">
   <div class="section-inner">
-    <h2>Comece a usar hoje, de graça</h2>
-    <p>Acesse o repositório, escolha uma skill e use agora mesmo no Claude.</p>
+    <h2>Pronto para começar?</h2>
+    <p>Acesse o repositório, clone e comece a usar hoje mesmo. É grátis e open source.</p>
     <div class="cta-actions">
-      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills" target="_blank" class="btn-primary">
-        Abrir no GitHub →
+      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills" target="_blank" class="btn-pri">
+        ⬇&ensp;Acessar no GitHub
       </a>
-      <a href="https://www.mangaba.ia.br/" target="_blank" class="btn-outline">
-        Conhecer a Mangaba AI
+      <a href="https://www.mangaba.ia.br/" target="_blank" class="btn-ghost">
+        Conhecer a Mangaba AI ↗
       </a>
     </div>
   </div>
@@ -922,16 +878,54 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">🥭</div>
-  <p>
-    Desenvolvido por <a href="https://www.mangaba.ia.br/" target="_blank">Mangaba AI</a>
-    &nbsp;·&nbsp;
-    <a href="https://github.com/dheiver2/mangaba-ai-claude-skills" target="_blank">GitHub</a>
-    &nbsp;·&nbsp;
-    Licença MIT
-  </p>
-  <p style="margin-top:.5rem; font-size:.8rem; opacity:.6;">Inteligência Artificial para empresas brasileiras</p>
+  <div class="footer-inner">
+    <span class="footer-mango">🥭</span>
+    <div class="footer-title">Mangaba AI</div>
+    <div class="footer-sub">Inteligência artificial para o dia a dia de PMEs brasileiras</div>
+    <div class="footer-links">
+      <a href="https://www.mangaba.ia.br/" target="_blank">Site oficial</a>
+      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills" target="_blank">GitHub</a>
+      <a href="https://github.com/dheiver2/mangaba-ai-claude-skills/blob/master/CLAUDE.md" target="_blank">CLAUDE.md</a>
+      <a href="https://claude.ai" target="_blank">Claude AI</a>
+    </div>
+    <div class="footer-copy">
+      Feito com ❤️ e <a href="https://claude.ai" target="_blank" style="color:var(--orange)">Claude</a> para PMEs do Brasil
+    </div>
+  </div>
 </footer>
 
+<script>
+  /* ── Fade-in on scroll ── */
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+
+  /* ── Animated counters ── */
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.to, 10);
+    const dur = 1600;
+    const start = performance.now();
+    function step(now) {
+      const p = Math.min((now - start) / dur, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(ease * target);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  const cObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('[data-to]').forEach(animateCounter);
+        cObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.stats-bar').forEach(el => cObs.observe(el));
+</script>
 </body>
 </html>
