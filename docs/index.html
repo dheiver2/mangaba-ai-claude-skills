@@ -393,6 +393,56 @@
     footer a:hover { text-decoration: underline; }
     footer .footer-logo { font-size: 1.5rem; margin-bottom: .5rem; }
 
+    /* ── CLAUDE LOGO ── */
+    .claude-logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .claude-logo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 999px;
+      padding: .5rem 1.1rem .5rem .75rem;
+      font-size: .8rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.9);
+      letter-spacing: .03em;
+      backdrop-filter: blur(4px);
+    }
+    .claude-logo-badge svg {
+      flex-shrink: 0;
+    }
+
+    /* ── POWERED BY STRIP ── */
+    .powered-strip {
+      background: #1a1a1a;
+      color: rgba(255,255,255,.65);
+      text-align: center;
+      padding: .9rem 1.5rem;
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .02em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      flex-wrap: wrap;
+    }
+    .powered-strip a {
+      color: #D97757;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+    }
+    .powered-strip a:hover { text-decoration: underline; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 640px) {
       .nav-links { display: none; }
@@ -421,6 +471,16 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
+    <div class="claude-logo-wrap">
+      <div class="claude-logo-badge">
+        <!-- Anthropic / Claude logo mark -->
+        <svg width="22" height="22" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Claude logo">
+          <path d="M31.84 9L23 23.5 14.16 9H7l16 27.5L39 9h-7.16z" fill="#D97757"/>
+          <path d="M23 23.5L14.16 9H7l9 15.5L23 23.5z" fill="#D97757" opacity=".7"/>
+        </svg>
+        Powered by Claude · Anthropic
+      </div>
+    </div>
     <div class="hero-badge">✦ Skills Claude para PMEs brasileiras</div>
     <h1>IA prática para o<br /><em>dia a dia do seu negócio</em></h1>
     <p>75 prompts prontos, agendamentos automáticos e artefatos profissionais — use com Claude sem precisar saber escrever prompt.</p>
@@ -457,6 +517,18 @@
       <div class="stat-label">Em português BR</div>
     </div>
   </div>
+</div>
+
+<!-- POWERED BY STRIP -->
+<div class="powered-strip">
+  <span>Feito para funcionar com</span>
+  <a href="https://claude.ai" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M31.84 9L23 23.5 14.16 9H7l16 27.5L39 9h-7.16z" fill="#D97757"/>
+    </svg>
+    Claude by Anthropic
+  </a>
+  <span>— copie o prompt, cole no Claude e receba o resultado.</span>
 </div>
 
 <!-- AREAS -->
