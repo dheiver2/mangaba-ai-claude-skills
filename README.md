@@ -5,11 +5,11 @@
 <h1 align="center">🥭 Mangaba AI — Claude Skills para PMEs</h1>
 
 <p align="center">
-  <strong>35 prompts prontos, agendamentos automáticos e artefatos profissionais<br>para pequenas e médias empresas brasileiras usarem com Claude.</strong>
+  <strong>75 prompts prontos, agendamentos automáticos e artefatos profissionais<br>para pequenas e médias empresas brasileiras usarem com Claude.</strong>
 </p>
 
 <p align="center">
-  <a href="#-áreas-disponíveis"><img src="https://img.shields.io/badge/4_Áreas-Financeiro_·_Marketing_·_Atendimento_·_RH-blue?style=flat-square" /></a>
+  <a href="#-áreas-disponíveis"><img src="https://img.shields.io/badge/9_Áreas-Financeiro_·_Marketing_·_Vendas_·_RH_e_mais-blue?style=flat-square" /></a>
   <a href="#-como-usar"><img src="https://img.shields.io/badge/Compatível-Claude.ai_e_Claude_Code-purple?style=flat-square&logo=anthropic" /></a>
   <img src="https://img.shields.io/badge/Idioma-Português_BR-009c3b?style=flat-square" />
   <img src="https://img.shields.io/badge/Licença-MIT-yellow?style=flat-square" />
@@ -27,6 +27,8 @@ Uma coleção de **skills práticas do Claude** organizadas por área de negóci
 Também inclui **Scheduled Tasks** para automatizar relatórios e rotinas diárias, e **Artefatos** prontos para editar e usar com clientes.
 
 > **Para quem é?** Donos de PMEs, gestores e equipes que querem usar IA no dia a dia sem precisar de um especialista técnico ao lado.
+
+**75 arquivos · 9 áreas de negócio · 3 tipos de skill · 100% em português**
 
 ---
 
@@ -71,10 +73,43 @@ Também inclui **Scheduled Tasks** para automatizar relatórios e rotinas diári
       <td align="center">2</td>
       <td align="center">2</td>
     </tr>
+    <tr>
+      <td><a href="./juridico/">⚖️ Jurídico</a></td>
+      <td>Contratos, LGPD, notificações, compliance</td>
+      <td align="center">3</td>
+      <td align="center">2</td>
+      <td align="center">2</td>
+    </tr>
+    <tr>
+      <td><a href="./operacional/">⚙️ Operacional</a></td>
+      <td>Processos, SOPs, checklists, continuidade</td>
+      <td align="center">3</td>
+      <td align="center">2</td>
+      <td align="center">2</td>
+    </tr>
+    <tr>
+      <td><a href="./vendas/">🤝 Vendas</a></td>
+      <td>Prospecção, pipeline, follow-up, forecast</td>
+      <td align="center">3</td>
+      <td align="center">2</td>
+      <td align="center">2</td>
+    </tr>
+    <tr>
+      <td><a href="./fiscal/">🧾 Fiscal e Contábil</a></td>
+      <td>Simples Nacional, regime tributário, calendário fiscal</td>
+      <td align="center">3</td>
+      <td align="center">2</td>
+      <td align="center">2</td>
+    </tr>
+    <tr>
+      <td><a href="./tecnologia/">💻 Tecnologia e TI</a></td>
+      <td>Seleção de software, segurança, automações, backup</td>
+      <td align="center">3</td>
+      <td align="center">2</td>
+      <td align="center">2</td>
+    </tr>
   </tbody>
 </table>
-
-**35 arquivos · 3 tipos · 4 áreas · 100% em português**
 
 ---
 
@@ -194,6 +229,81 @@ Os arquivos em `scheduled/` incluem também o **comando exato** para criar o age
 | [relatorio-produtividade.md](./rh/scheduled/relatorio-produtividade.md) | ⏰ Mensal | Turnover, absenteísmo, custo de pessoal e clima |
 | [onboarding-colaborador.md](./rh/artefatos/onboarding-colaborador.md) | 📄 Artefato | Plano 30/60/90 dias para novo colaborador |
 | [politica-home-office.md](./rh/artefatos/politica-home-office.md) | 📄 Artefato | Política de trabalho remoto alinhada à CLT |
+
+</details>
+
+<details>
+<summary><strong>⚖️ Jurídico</strong> — clique para expandir</summary>
+
+| Arquivo | Tipo | O que faz |
+|---------|------|-----------|
+| [revisao-contrato.md](./juridico/skills/revisao-contrato.md) | Skill | Analisa contratos, identifica riscos e sugere renegociações |
+| [notificacao-extrajudicial.md](./juridico/skills/notificacao-extrajudicial.md) | Skill | Notificação formal para cobrar dívidas ou exigir cumprimento de contrato |
+| [conformidade-lgpd.md](./juridico/skills/conformidade-lgpd.md) | Skill | Diagnóstico LGPD com score e plano de adequação |
+| [monitoramento-prazos.md](./juridico/scheduled/monitoramento-prazos.md) | ⏰ Semanal | Alerta de vencimentos contratuais, alvarás e obrigações legais |
+| [relatorio-compliance.md](./juridico/scheduled/relatorio-compliance.md) | ⏰ Mensal | Status de conformidade regulatória da empresa |
+| [contrato-prestacao-servicos.md](./juridico/artefatos/contrato-prestacao-servicos.md) | 📄 Artefato | Contrato completo de prestação de serviços (base legal: CC/2002) |
+| [politica-privacidade-lgpd.md](./juridico/artefatos/politica-privacidade-lgpd.md) | 📄 Artefato | Política de Privacidade completa e adequada à LGPD |
+
+</details>
+
+<details>
+<summary><strong>⚙️ Operacional</strong> — clique para expandir</summary>
+
+| Arquivo | Tipo | O que faz |
+|---------|------|-----------|
+| [mapeamento-processo.md](./operacional/skills/mapeamento-processo.md) | Skill | Documenta processo AS-IS, identifica gargalos e propõe TO-BE |
+| [checklist-qualidade.md](./operacional/skills/checklist-qualidade.md) | Skill | Cria checklists objetivos para padronizar entregas |
+| [analise-gargalo.md](./operacional/skills/analise-gargalo.md) | Skill | Identifica o principal ponto de estrangulamento da operação |
+| [relatorio-operacional.md](./operacional/scheduled/relatorio-operacional.md) | ⏰ Semanal | Dashboard de capacidade, prazos, qualidade e alertas |
+| [auditoria-processos.md](./operacional/scheduled/auditoria-processos.md) | ⏰ Mensal | Avalia aderência aos SOPs e identifica processos desatualizados |
+| [procedimento-padrao-sop.md](./operacional/artefatos/procedimento-padrao-sop.md) | 📄 Artefato | SOP completo com fluxograma, etapas e checklist de conclusão |
+| [plano-continuidade.md](./operacional/artefatos/plano-continuidade.md) | 📄 Artefato | Plano de continuidade de negócios para situações de crise |
+
+</details>
+
+<details>
+<summary><strong>🤝 Vendas</strong> — clique para expandir</summary>
+
+| Arquivo | Tipo | O que faz |
+|---------|------|-----------|
+| [script-prospeccao.md](./vendas/skills/script-prospeccao.md) | Skill | Scripts personalizados para LinkedIn, email frio e WhatsApp |
+| [analise-pipeline.md](./vendas/skills/analise-pipeline.md) | Skill | Avalia o funil, aponta deals travados e receita previsível |
+| [sequencia-follow-up.md](./vendas/skills/sequencia-follow-up.md) | Skill | Cadência de 5 touchpoints para reativar prospects frios |
+| [relatorio-pipeline.md](./vendas/scheduled/relatorio-pipeline.md) | ⏰ Semanal | Snapshot do funil com prioridades e deals em risco |
+| [forecast-vendas.md](./vendas/scheduled/forecast-vendas.md) | ⏰ Mensal | Projeção de fechamento com 3 cenários (feito no dia 20) |
+| [playbook-vendas.md](./vendas/artefatos/playbook-vendas.md) | 📄 Artefato | Guia completo do processo comercial para treinar vendedores |
+| [kit-objecoes.md](./vendas/artefatos/kit-objecoes.md) | 📄 Artefato | Respostas estratégicas para as 6 objeções mais comuns |
+
+</details>
+
+<details>
+<summary><strong>🧾 Fiscal e Contábil</strong> — clique para expandir</summary>
+
+| Arquivo | Tipo | O que faz |
+|---------|------|-----------|
+| [analise-regime-tributario.md](./fiscal/skills/analise-regime-tributario.md) | Skill | Compara Simples × Lucro Presumido × Lucro Real |
+| [calculo-simples-nacional.md](./fiscal/skills/calculo-simples-nacional.md) | Skill | Verifica DAS, alíquota, fator "r" e oportunidades de redução |
+| [planejamento-tributario.md](./fiscal/skills/planejamento-tributario.md) | Skill | Planejamento anual com top 5 oportunidades de economia fiscal |
+| [calendario-fiscal.md](./fiscal/scheduled/calendario-fiscal.md) | ⏰ Mensal | Todas as obrigações fiscais do mês com datas e multas |
+| [relatorio-impostos.md](./fiscal/scheduled/relatorio-impostos.md) | ⏰ Trimestral | Consolidado de impostos pagos e estimativa do próximo trimestre |
+| [guia-obrigacoes-pme.md](./fiscal/artefatos/guia-obrigacoes-pme.md) | 📄 Artefato | Guia personalizado de todas as obrigações fiscais e legais |
+| [checklist-fechamento-contabil.md](./fiscal/artefatos/checklist-fechamento-contabil.md) | 📄 Artefato | Checklist mensal para enviar documentos ao contador |
+
+</details>
+
+<details>
+<summary><strong>💻 Tecnologia e TI</strong> — clique para expandir</summary>
+
+| Arquivo | Tipo | O que faz |
+|---------|------|-----------|
+| [selecao-software.md](./tecnologia/skills/selecao-software.md) | Skill | Compara ferramentas e recomenda a melhor para o perfil da empresa |
+| [politica-seguranca.md](./tecnologia/skills/politica-seguranca.md) | Skill | Política de segurança da informação acessível e prática |
+| [mapa-automacoes.md](./tecnologia/skills/mapa-automacoes.md) | Skill | Identifica tarefas para automatizar com ROI estimado |
+| [auditoria-ferramentas.md](./tecnologia/scheduled/auditoria-ferramentas.md) | ⏰ Mensal | Revisa assinaturas, acessos ativos e desperdícios de TI |
+| [relatorio-custos-ti.md](./tecnologia/scheduled/relatorio-custos-ti.md) | ⏰ Mensal | Consolida gastos com tecnologia e analisa ROI por ferramenta |
+| [mapa-stack-tecnologico.md](./tecnologia/artefatos/mapa-stack-tecnologico.md) | 📄 Artefato | Documentação completa de todas as ferramentas da empresa |
+| [plano-backup-seguranca.md](./tecnologia/artefatos/plano-backup-seguranca.md) | 📄 Artefato | Plano de backup com regra 3-2-1 e procedimento de recuperação |
 
 </details>
 
