@@ -8,22 +8,26 @@
   <meta property="og:title" content="Mangaba AI — Claude Skills para PMEs" />
   <meta property="og:description" content="75 prompts prontos para PMEs brasileiras: Financeiro, Marketing, Vendas, RH, Jurídico e mais." />
   <meta property="og:url" content="https://dheiver2.github.io/mangaba-ai-claude-skills/" />
+  <link rel="icon" type="image/svg+xml" href="brand-logo.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:       #07090a;
-      --surface:  #0d1114;
-      --card:     rgba(255,255,255,.032);
-      --border:   rgba(255,255,255,.07);
-      --orange:   #D97757;
-      --orange-d: #b35c38;
-      --green:    #22c55e;
-      --text:     #eef2ee;
-      --sub:      rgba(238,242,238,.52);
-      --muted:    rgba(238,242,238,.28);
+      --bg:       #FFFCF0;
+      --surface:  #FFF3E2;
+      --card:     rgba(255,255,255,.65);
+      --border:   rgba(64,55,49,.13);
+      --orange:   #E94A12;
+      --orange-l: #FF7A1A;
+      --orange-d: #C23E0F;
+      --yellow:   #FFD83D;
+      --green:    #7BBF26;
+      --green-d:  #689924;
+      --text:     #403731;
+      --sub:      rgba(64,55,49,.68);
+      --muted:    rgba(64,55,49,.46);
       --r:        14px;
     }
 
@@ -43,7 +47,7 @@
       inset: 0 0 auto;
       z-index: 200;
       padding: 0 2rem;
-      background: rgba(7,9,10,.75);
+      background: rgba(255,252,240,.82);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--border);
@@ -88,17 +92,17 @@
     .hero-bg {
       position: absolute; inset: 0; z-index: 0; pointer-events: none;
       background:
-        radial-gradient(ellipse 700px 500px at 10% 20%,  rgba(217,119,87,.13) 0%, transparent 70%),
-        radial-gradient(ellipse 600px 600px at 90% 80%,  rgba(34,197,94,.08)  0%, transparent 70%),
-        radial-gradient(ellipse 900px 400px at 50% 110%, rgba(45,85,60,.18)   0%, transparent 65%),
-        var(--bg);
+        radial-gradient(ellipse 700px 500px at 10% 20%,  rgba(255,216,61,.22) 0%, transparent 70%),
+        radial-gradient(ellipse 600px 600px at 90% 80%,  rgba(123,191,38,.14)  0%, transparent 70%),
+        radial-gradient(ellipse 900px 400px at 50% 110%, rgba(255,122,26,.22)   0%, transparent 65%),
+        linear-gradient(180deg, #FFFCF0 0%, #FFDFCC 100%);
     }
 
     /* subtle dot grid */
     .hero-grid {
       position: absolute; inset: 0; z-index: 0; pointer-events: none;
       background-image:
-        radial-gradient(rgba(255,255,255,.09) 1px, transparent 1px);
+        radial-gradient(rgba(64,55,49,.14) 1px, transparent 1px);
       background-size: 36px 36px;
       mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 100%);
       -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 100%);
@@ -124,11 +128,11 @@
     /* three concentric animated rings */
     .c-ring {
       position: absolute; border-radius: 50%;
-      border: 1px solid rgba(217,119,87,.18);
+      border: 1px solid rgba(233,74,18,.18);
     }
     .c-ring-1 { inset: 0;    animation: ringPulse 4s ease-in-out infinite; }
     .c-ring-2 { inset: 22px; animation: ringPulse 4s ease-in-out .8s infinite; }
-    .c-ring-3 { inset: 44px; animation: ringPulse 4s ease-in-out 1.6s infinite; border-color: rgba(217,119,87,.1); }
+    .c-ring-3 { inset: 44px; animation: ringPulse 4s ease-in-out 1.6s infinite; border-color: rgba(233,74,18,.1); }
 
     @keyframes ringPulse {
       0%,100% { transform: scale(1);    opacity: 1; }
@@ -140,7 +144,7 @@
       position: absolute;
       width: 170px; height: 170px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(217,119,87,.35) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(233,74,18,.35) 0%, transparent 70%);
       animation: glowBreath 3s ease-in-out infinite;
     }
     @keyframes glowBreath {
@@ -153,10 +157,9 @@
       width: 130px; height: 130px;
       position: relative; z-index: 2;
       filter:
-        drop-shadow(0 0  8px rgba(217,119,87,1))
-        drop-shadow(0 0 24px rgba(217,119,87,.8))
-        drop-shadow(0 0 56px rgba(217,119,87,.45))
-        drop-shadow(0 0 90px rgba(217,119,87,.2));
+        drop-shadow(0 0  8px rgba(233,74,18,.45))
+        drop-shadow(0 0 24px rgba(233,74,18,.3))
+        drop-shadow(0 0 56px rgba(233,74,18,.18));
       animation: logoFloat 6s ease-in-out infinite;
     }
     @keyframes logoFloat {
@@ -172,21 +175,21 @@
     }
     .wm-line {
       height: 1px; width: 56px;
-      background: linear-gradient(90deg, transparent, rgba(217,119,87,.55));
+      background: linear-gradient(90deg, transparent, rgba(233,74,18,.55));
     }
     .wm-line.r {
-      background: linear-gradient(90deg, rgba(217,119,87,.55), transparent);
+      background: linear-gradient(90deg, rgba(233,74,18,.55), transparent);
     }
     .wm-text {
       font-size: .68rem; font-weight: 800;
       letter-spacing: .38em; text-transform: uppercase;
-      color: rgba(217,119,87,.85);
+      color: rgba(233,74,18,.85);
     }
 
     /* ── hero text ── */
     .hero-badge {
       display: inline-flex; align-items: center; gap: .5rem;
-      background: rgba(255,255,255,.05);
+      background: rgba(255,255,255,.65);
       border: 1px solid var(--border);
       border-radius: 999px;
       padding: .32rem 1rem;
@@ -197,7 +200,7 @@
     .live-dot {
       width: 7px; height: 7px; border-radius: 50%;
       background: var(--green);
-      box-shadow: 0 0 8px rgba(34,197,94,.9);
+      box-shadow: 0 0 8px rgba(123,191,38,.9);
       animation: blink 2s ease-in-out infinite;
     }
     @keyframes blink {
@@ -211,7 +214,7 @@
       margin-bottom: 1.5rem;
     }
     .grad {
-      background: linear-gradient(130deg, #F5A87A 0%, #D97757 40%, #e8895f 100%);
+      background: linear-gradient(130deg, #FF7A1A 0%, #E94A12 55%, #C23E0F 100%);
       -webkit-background-clip: text; background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -227,17 +230,17 @@
       margin-bottom: 4.5rem;
     }
     .btn-pri {
-      background: linear-gradient(140deg, #D97757 0%, #b75330 100%);
+      background: linear-gradient(140deg, #E94A12 0%, #C23E0F 100%);
       color: #fff; font-weight: 700; font-size: .95rem;
       padding: .88rem 2.1rem; border-radius: 11px;
       text-decoration: none;
-      box-shadow: 0 4px 20px rgba(217,119,87,.45), 0 0 0 1px rgba(217,119,87,.25);
+      box-shadow: 0 4px 20px rgba(233,74,18,.45), 0 0 0 1px rgba(233,74,18,.25);
       transition: transform .2s, box-shadow .2s;
       display: inline-flex; align-items: center; gap: .5rem;
     }
     .btn-pri:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(217,119,87,.55), 0 0 0 1px rgba(217,119,87,.35);
+      box-shadow: 0 8px 32px rgba(233,74,18,.55), 0 0 0 1px rgba(233,74,18,.35);
     }
     .btn-ghost {
       background: transparent;
@@ -248,7 +251,7 @@
       transition: border-color .2s, background .2s;
       display: inline-flex; align-items: center; gap: .5rem;
     }
-    .btn-ghost:hover { border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.04); }
+    .btn-ghost:hover { border-color: rgba(64,55,49,.32); background: rgba(255,255,255,.55); }
 
     /* scroll cue */
     .scroll-cue {
@@ -348,7 +351,7 @@
       width: 46px; height: 46px; border-radius: 12px;
       display: flex; align-items: center; justify-content: center;
       font-size: 1.45rem; flex-shrink: 0;
-      background: var(--icon-bg, rgba(255,255,255,.05));
+      background: var(--icon-bg, rgba(64,55,49,.06));
     }
     .ac-title { font-size: 1rem; font-weight: 700; }
     .ac-desc { font-size: .845rem; color: var(--sub); line-height: 1.55; flex: 1; }
@@ -356,7 +359,7 @@
     .tag {
       font-size: .68rem; font-weight: 600;
       padding: .18rem .52rem; border-radius: 6px;
-      background: rgba(255,255,255,.05);
+      background: rgba(255,255,255,.55);
       color: var(--muted); border: 1px solid var(--border);
     }
     .ac-footer {
@@ -383,7 +386,7 @@
       top: 0; left: 0; right: 0; height: 1px;
       background: var(--tc, transparent);
     }
-    .type-card:hover { border-color: rgba(255,255,255,.13); transform: translateY(-3px); }
+    .type-card:hover { border-color: rgba(233,74,18,.4); transform: translateY(-3px); }
     .type-emoji { font-size: 2.3rem; margin-bottom: 1rem; display: block; }
     .type-card h3 { font-size: 1rem; font-weight: 800; margin-bottom: .5rem; }
     .type-card p  { font-size: .855rem; color: var(--sub); margin-bottom: 1rem; line-height: 1.6; }
@@ -400,10 +403,10 @@
       padding: 1.75rem; background: var(--card);
       transition: border-color .22s;
     }
-    .step-card:hover { border-color: rgba(217,119,87,.35); }
+    .step-card:hover { border-color: rgba(233,74,18,.35); }
     .step-num {
       width: 38px; height: 38px; border-radius: 10px;
-      background: rgba(217,119,87,.1); border: 1px solid rgba(217,119,87,.28);
+      background: rgba(233,74,18,.1); border: 1px solid rgba(233,74,18,.28);
       color: var(--orange); font-weight: 900; font-size: .88rem;
       display: flex; align-items: center; justify-content: center;
       margin-bottom: 1.1rem;
@@ -412,8 +415,8 @@
     .step-card p  { font-size: .82rem; color: var(--sub); }
 
     .code-block {
-      background: #080a09;
-      border: 1px solid rgba(255,255,255,.07);
+      background: #2E241E;
+      border: 1px solid rgba(64,55,49,.3);
       border-radius: var(--r);
       padding: 1.75rem 2rem; overflow-x: auto;
     }
@@ -438,7 +441,7 @@
       content: ''; position: absolute;
       width: 700px; height: 500px;
       top: 50%; left: 50%; transform: translate(-50%,-50%);
-      background: radial-gradient(ellipse, rgba(217,119,87,.1) 0%, transparent 65%);
+      background: radial-gradient(ellipse, rgba(233,74,18,.1) 0%, transparent 65%);
       pointer-events: none;
     }
     .cta-section h2 {
@@ -454,7 +457,7 @@
 
     /* ─────────────────── FOOTER ─────────────────── */
     footer {
-      background: #030506;
+      background: #FFDFCC;
       border-top: 1px solid var(--border);
       padding: 3rem 1.5rem;
       text-align: center; font-size: .85rem;
@@ -500,7 +503,7 @@
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <span>🥭</span> Mangaba AI
+      <img src="brand-logo.svg" alt="Mangaba AI" style="height:48px;width:auto;border-radius:8px" /> Mangaba AI
     </a>
     <div class="nav-links">
       <a href="#areas">Áreas</a>
@@ -537,7 +540,7 @@
               <stop offset="100%" stop-color="#8A3618"/>
             </linearGradient>
             <linearGradient id="gc-c" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%"   stop-color="#D97757"/>
+              <stop offset="0%"   stop-color="#E94A12"/>
               <stop offset="100%" stop-color="#602810"/>
             </linearGradient>
           </defs>
@@ -629,7 +632,7 @@
     <div class="areas-grid fi fi-d1">
 
       <a href="https://github.com/dheiver2/mangaba-ai-claude-skills/tree/master/financeiro" target="_blank" class="area-card"
-         style="--accent-line: linear-gradient(90deg,#22c55e,#16a34a); --icon-bg: rgba(34,197,94,.1)">
+         style="--accent-line: linear-gradient(90deg,#7BBF26,#689924); --icon-bg: rgba(123,191,38,.1)">
         <div class="ac-top">
           <div class="ac-icon">💰</div>
           <div class="ac-title">Financeiro</div>
@@ -776,7 +779,7 @@
       <p>Cada área contém os três tipos para cobrir diferentes momentos do seu dia de trabalho.</p>
     </div>
     <div class="types-grid">
-      <div class="type-card fi fi-d1" style="--tc: linear-gradient(90deg,#22c55e,transparent)">
+      <div class="type-card fi fi-d1" style="--tc: linear-gradient(90deg,#7BBF26,transparent)">
         <span class="type-emoji">⚡</span>
         <h3>Skills</h3>
         <p>Prompts avulsos prontos para usar a qualquer momento. Cole no Claude, preencha os campos e receba o resultado.</p>
@@ -879,7 +882,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <span class="footer-mango">🥭</span>
+    <span class="footer-mango"><img src="brand-logo.svg" alt="Mangaba AI" style="height:64px;width:auto;border-radius:10px" /></span>
     <div class="footer-title">Mangaba AI</div>
     <div class="footer-sub">Inteligência artificial para o dia a dia de PMEs brasileiras</div>
     <div class="footer-links">
